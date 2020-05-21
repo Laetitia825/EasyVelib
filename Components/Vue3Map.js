@@ -5,20 +5,20 @@ import MapViewDirections from 'react-native-maps-directions';
 
 
 const coordinates =[
-    { latitude: 48.831583,            //Maison
-      longitude: 2.273262,
-    },
-    { latitude: 48.852508,            //Velib LaFontaine
-      longitude: 2.265014,
-    },
-    { latitude: 48.860229,            
-        longitude: 2.296055,           
-    },
-    { latitude: 48.857984,
-        longitude:  2.301076,
-    },
-  
-  ];
+  { latitude: 48.869978,            //Rue de la Paix
+    longitude: 2.332094,
+  },
+  { latitude: 48.867367,            //station vélib à proximité rue de la paix
+    longitude: 2.340625,
+  },
+  { latitude: 48.852795,            // avenue mozart
+      longitude:2.268382 ,           
+  },
+  { latitude: 48.854351,            // station velib mozart
+      longitude:  2.269177,
+  },
+
+];
 
 const GOOGLE_MAPS_APIKEY = "AIzaSyAxewzYWS1lrKHda6hrLje0r3VeDHC3Kgs"
 
