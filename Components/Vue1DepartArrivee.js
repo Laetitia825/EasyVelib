@@ -1,4 +1,4 @@
-//équivalent Search
+//permet de définir l'affichage des champs de saisie de départ et d'arrivée
 
 import React from 'react'
 import { StyleSheet, View, TextInput, Button, Text } from 'react-native'
