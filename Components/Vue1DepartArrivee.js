@@ -26,13 +26,13 @@ class Vue1DepartArrivee extends React.Component {
   
   
   
-  render() {
+  render() {            // rendu affichage des champs de saisie de départ et d'arrivée
     return (
-      <View style={styles.main_container}>
+      <View style={styles.main_container}>                      //affichage selon la définition du main_container 
         <TextInput 
-          style={styles.textinput} 
-          placeholder='Départ!'
-          onChangeText={(text) => this._adresseDepartInputChanged(text)}       // pk appel fonction avec this devant ?
+          style={styles.textinput}                              // style du champs de saisie fixé
+          placeholder='Départ!'                                 // champs de saisie adresse de départ 
+          onChangeText={(text) => this._adresseDepartInputChanged(text)}       
         />
         <TextInput 
           style={styles.textinput} 
@@ -45,15 +45,16 @@ class Vue1DepartArrivee extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({             //défini le style d'affichage des rectangles sur l'écran
   main_container: {
     flex: 1,
     marginTop: 20
   },
-  textinput: {
+  textinput: {                                // défini le style des rectangles
     marginLeft: 5,
     marginRight: 5,
     height: 50,
+    width: 200,
     borderColor: '#000000',
     borderWidth: 1,
     paddingLeft: 5
