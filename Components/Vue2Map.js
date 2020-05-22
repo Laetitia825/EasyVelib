@@ -1,3 +1,5 @@
+//2ème vue affichage de la carte avec des marqueurs 
+
 import  React from 'react';
 import {  View, Text, StyleSheet, Dimensions} from 'react-native';
 import MapView from 'react-native-maps';
@@ -5,10 +7,10 @@ import MapView from 'react-native-maps';
 
 
 const coordinates =[
-  { latitude: 48.869978,            //Rue de la Paix
+  { latitude: 48.869978,            //Rue de la Paix, normalement coordonnées récupérée par une fonction de géocodage
     longitude: 2.332094,
   },
-  { latitude: 48.867367,            //station vélib à proximité rue de la paix
+  { latitude: 48.867367,            //station vélib à proximité rue de la paix, normalement coordonnées de la station sélectionnée par l'utilisateur
     longitude: 2.340625,
   },
   { latitude: 48.852795,            // avenue mozart
@@ -24,16 +26,17 @@ const coordinates =[
 
 class Vue2Map extends React.Component {
 
-    render() {
-        return (
+    render() {   
+        return ( 
             <View style={styles.container}>
-                <MapView 
-                    style={styles.mapStyle}
-                    initialRegion={Paris}>
-                    <MapView.Marker coordinate={coordinates[0] }/>
-                    <MapView.Marker coordinate={coordinates[1] /*pinColor={pinColorVelib}*/ }/>
-                    <MapView.Marker coordinate={coordinates[2] /*pinColor={pinColorVelib}*/ }/>
-                    <MapView.Marker coordinate={coordinates[3]}/>
+                <MapView             //affichage de la carte
+                    style={styles.mapStyle} 
+                    initialRegion={Paris}>             //centralisation de la carte sur Paris
+                    //affichage des marqueurs 
+                    <MapView.Marker coordinate={coordinates[0] }/>                                                   
+                    <MapView.Marker coordinate={coordinates[1] /*pinColor={pinColorVelib}*/ }/>  
+                    <MapView.Marker coordinate={coordinates[2] /*pinColor={pinColorVelib}*/ }/>  
+                    <MapView.Marker coordinate={coordinates[3]}/>  
                 </MapView>
             </View>
         );
