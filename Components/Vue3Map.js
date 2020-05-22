@@ -1,7 +1,9 @@
+//3ème vue pour l'affichage de l'itinéraire
+
 import  React from 'react';
 import {  View, Text, StyleSheet, Dimensions} from 'react-native';
 import MapView from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+import MapViewDirections from 'react-native-maps-directions';   //nouvelle librairie pour obtenir l'itinéraire entre 2 points de coordonnées de GPS connus
 
 
 const coordinates =[
@@ -20,7 +22,7 @@ const coordinates =[
 
 ];
 
-const GOOGLE_MAPS_APIKEY = "AIzaSyAxewzYWS1lrKHda6hrLje0r3VeDHC3Kgs"
+const GOOGLE_MAPS_APIKEY = "AIzaSyAxewzYWS1lrKHda6hrLje0r3VeDHC3Kgs"            //utilisation d'une API google pour l'ititnéraire
 
 class Vue3Map extends React.Component {
 
@@ -34,26 +36,26 @@ class Vue3Map extends React.Component {
                     <MapView.Marker coordinate={coordinates[1] /*pinColor={pinColorVelib}*/ }/>
                     <MapView.Marker coordinate={coordinates[2] /*pinColor={pinColorVelib}*/ }/>
                     <MapView.Marker coordinate={coordinates[3]}/>
-                    <MapViewDirections
+                    <MapViewDirections                         //construction de l'itinéraire point de départ --> 1ère station de vélib
                         origin= {coordinates[0]}
                         destination={coordinates[1]}
                         apikey= {GOOGLE_MAPS_APIKEY}
                         strokeWidth= {3}
-                        strokeColor= "hotpink"
+                        strokeColor= "hotpink"                //couleur d'affichage de l'itinéraire (à pied)
                     />
-                    <MapViewDirections
+                    <MapViewDirections                        //construction itinéraire 1ère station --> 2ème station
                         origin= {coordinates[1]}
                         destination={coordinates[2]}
                         apikey= {GOOGLE_MAPS_APIKEY}
                         strokeWidth= {3}
-                        strokeColor= "blue"
+                        strokeColor= "blue"                   //couleur d'affichage de l'itinéraire en Vélib
                     />
-                    <MapViewDirections
+                    <MapViewDirections                        //construction itinéraire 2ème station --> destination
                         origin= {coordinates[2]}
                         destination={coordinates[3]}
                         apikey= {GOOGLE_MAPS_APIKEY}
                         strokeWidth= {3}
-                        strokeColor= "hotpink"
+                        strokeColor= "hotpink"                //couleur d'affichage de l'itinéraire à pied
                     />
                 </MapView>
             </View>
